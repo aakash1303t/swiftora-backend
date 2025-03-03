@@ -15,6 +15,5 @@ app.use(cors());
 
 app.use("/api/users", userRoutes);
 
-// ❌ REMOVE `app.listen(PORT)`
-// ✅ EXPORT THE APP (Required for Vercel)
-export default app;
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
